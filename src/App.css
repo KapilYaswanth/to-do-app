@@ -21,6 +21,11 @@
   border-radius: 10px;
   box-shadow: 3px 6px 40px #000;
 }
+/*@media(max-width: 800px){
+  .app-wrapper{
+    background-color:tomato;
+  }
+  }*/
 .header h1{
   color:#fff;
   text-align: center;
@@ -47,6 +52,12 @@
   border:0;
   background-color: #f1af71;
   cursor: pointer;
+}
+.button-add:hover{
+  background-color: violet;
+}
+.button-deleted:hover{
+  background-color: greenyellow;
 }
 .button-deleted{
   width: 80px;
@@ -79,6 +90,7 @@
   width: 220px;
   background-color: #32343b;
   border:none;
+  align-items: center;
   color: #ccc;
   font-size: 20px;
   padding-left: 10px;

@@ -1,13 +1,14 @@
 import React from 'react'
-import {v4 as uuidV4} from "uuid";
-const Form=({input,setInput,todo,setTodo})=> {
+//import {v4 as uuidV4} from "uuid";
+const Form=({input,setInputs,todo,setTodo})=> {
     const onInputChange=(e)=>{
-    setInput(e.target.value);
+    setInputs(e.target.value);
     }
     const formOnSubmit=(e)=>{
         e.preventDefault();
-        setTodo([...todo,{id:uuidV4(),title:input,completed:false}]);
-        setInput("");
+        setTodo([...todo,input]);
+        console.log(todo);
+        setInputs("");
     }
     return (
         <div>
