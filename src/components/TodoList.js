@@ -9,12 +9,12 @@ export default function TodoList({todos,setTodos}) {
     return (
         <div>{
             todos.map((value,index) => (
-                 <li className="list-item">
-                     <input  className="list" value={value} onChange={(e)=>{e.preventDefault()}} />
+                 <li className="list-item" key={index}>
+                     <input  className="list" value={value.name} onChange={(e)=>{e.preventDefault()}} />
                      <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button className="button-deleted" onClick={()=>handleDelete(index)}>
+                     <button className="button-deleted" onClick={()=>handleDelete(index)}>
                 Done
-            </button>
+            </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
                  </li>
     ))}

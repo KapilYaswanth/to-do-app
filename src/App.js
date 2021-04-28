@@ -3,22 +3,22 @@ import './App.css';
 import Header from './components/Header'
 import Form from './components/form'
 import TodoList from './components/TodoList';
+import Errorboundary from './components/Errorboundary';
 const App=()=> {
-  const [input, setInput] = useState("")
-  const [todo, setTodo] = useState([])
+  const [input, setInput] = useState("");
+  const [todo, setTodo] = useState([]);
+  const [status, setStatus] = useState(false);
+
   return (
     <div className="container"> 
       <div className="app-wrapper">
         <div>
-          <Header />
-        </div>
-        <div>
+          <Errorboundary><Header status={status} setStatus={setStatus}/>
           <Form input={input} setInputs={setInput} todo={todo} setTodo={setTodo} />
-        </div>
-        <div>
           <TodoList  todos={todo} setTodos={setTodo}/>
-        </div>
-      </div>
+          </Errorboundary>
+    </div>
+    </div>
     </div>
   );
 }
